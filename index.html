@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Ensure window.fetch has both getter and setter for iframe extension instrumentation -->
+    <script>
+      (function() {
+        try {
+          var _currentFetch = window.fetch;
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            get: function() {
+              return _currentFetch;
+            },
+            set: function(fn) {
+              _currentFetch = fn;
+            }
+          });
+        } catch (e) {
+          try {
+            if (typeof Window !== 'undefined' && Window.prototype) {
+              var _protoFetch = Window.prototype.fetch;
+              Object.defineProperty(Window.prototype, 'fetch', {
+                configurable: true,
+                enumerable: true,
+                get: function() {
+                  return _protoFetch;
+                },
+                set: function(fn) {
+                  _protoFetch = fn;
+                }
+              });
+            }
+          } catch (_) {}
+        }
+
+        window.addEventListener('error', function(event) {
+          if (event && event.message && event.message.indexOf('Cannot set property fetch') !== -1) {
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
+          }
+          if (event && event.filename && event.filename.indexOf('chrome-extension://') !== -1) {
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
+          }
+        }, true);
+      })();
+    </script>
+    <title>Interior Design Studio for Homes & Commercial Spaces | Maison & Bureau</title>
+    <meta
+      name="description"
+      content="Maison & Bureau creates thoughtful interiors for homes, offices and commercial spaces, combining purposeful planning, refined aesthetics and considered design."
+    />
+    <link rel="canonical" href="https://maisonetbureau.com/" />
+    
+    <!-- OpenGraph Social Cards -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Maison & Bureau" />
+    <meta property="og:title" content="Interior Design Studio for Homes & Commercial Spaces | Maison & Bureau" />
+    <meta
+      property="og:description"
+      content="Maison & Bureau creates thoughtful interiors for homes, offices and commercial spaces, combining purposeful planning, refined aesthetics and considered design."
+    />
+    <meta property="og:url" content="https://maisonetbureau.com/" />
+
+    <!-- Twitter Social Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Interior Design Studio for Homes & Commercial Spaces | Maison & Bureau" />
+    <meta
+      name="twitter:description"
+      content="Maison & Bureau creates thoughtful interiors for homes, offices and commercial spaces, combining purposeful planning, refined aesthetics and considered design."
+    />
+
+    <!-- Google Fonts: Cormorant Garamond (Editorial Serif) & Plus Jakarta Sans (Clean Modern Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Schema.org JSON-LD Structured Data for Organization, WebSite, LocalBusiness, FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://maisonetbureau.com/#organization",
+          "name": "Maison & Bureau",
+          "url": "https://maisonetbureau.com/",
+          "logo": "https://maisonetbureau.com/logo.png",
+          "description": "Maison & Bureau creates thoughtful interiors for homes, offices and commercial spaces, combining purposeful planning, refined aesthetics and considered design.",
+          "knowsAbout": [
+            "Interior Design",
+            "Residential Interior Design",
+            "Commercial Interior Design",
+            "Office Interior Design",
+            "Turnkey Interior Design",
+            "Space Planning",
+            "Architectural Interior Architecture"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-212-555-0198",
+            "contactType": "client service",
+            "areaServed": ["US", "FR", "GB"],
+            "availableLanguage": ["English", "French"]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://maisonetbureau.com/#website",
+          "url": "https://maisonetbureau.com/",
+          "name": "Maison & Bureau",
+          "publisher": {
+            "@id": "https://maisonetbureau.com/#organization"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "InteriorDesignStudio",
+          "@id": "https://maisonetbureau.com/#localbusiness",
+          "name": "Maison & Bureau",
+          "url": "https://maisonetbureau.com/",
+          "telephone": "+1-212-555-0198",
+          "email": "contact@maisonetbureau.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "428 Broome Street, Studio 4A",
+            "addressLocality": "New York",
+            "addressRegion": "NY",
+            "postalCode": "10013",
+            "addressCountry": "US"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "09:00",
+              "closes": "18:00"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://maisonetbureau.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What does an interior designer do?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "An interior designer plans, coordinates, and crafts functional, aesthetically cohesive interior spaces. At Maison & Bureau, this encompasses spatial planning, architectural detailing, lighting design, material selection, custom millwork, furniture specification, and turnkey project coordination from initial concept through execution."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What types of spaces does Maison & Bureau design?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Maison & Bureau designs high-end residential homes (apartments, penthouses, townhouses, private estates) alongside commercial environments, corporate and creative offices, boutique retail flagships, and hospitality destinations."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does the interior design process work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our process follows five structured stages: 01 Discover (briefing and spatial audit), 02 Concept (creative direction and spatial narrative), 03 Develop (technical layouts, finishes, custom joinery), 04 Coordinate (vendor alignment, procurement schedules), and 05 Deliver (onsite installation, styling, and client handover)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Maison & Bureau provide turnkey interior design?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Our turnkey service provides complete end-to-end delivery—managing the entire lifecycle from initial conceptual drawings and engineering coordination through procurement, contractor supervision, site visits, and final turnkey styling."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How can I start an interior design project?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Starting a project begins with an introductory consultation. You can schedule a session through our consultation form or contact our studio directly with details regarding your location, timeline, and scope of work."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body class="bg-[#FAF8F5] text-[#1C1917] antialiased selection:bg-[#292524] selection:text-[#FAF8F5]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

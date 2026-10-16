@@ -1,0 +1,6 @@
+{
+  "name": "Maison & Bureau — Interior Design Studio",
+  "description": "Maison & Bureau creates thoughtful interiors for homes, offices and commercial spaces, combining purposeful planning, refined aesthetics and considered design.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
