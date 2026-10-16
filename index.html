@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Ensure window.fetch has both getter and setter for iframe extension instrumentation -->
+    <meta name="theme-color" content="#FAF8F5" />
+
+    <!-- Runtime Compatibility: Ensure window.fetch has both getter and setter for iframe instrumentation -->
     <script>
       (function() {
         try {
@@ -50,6 +52,8 @@
         }, true);
       })();
     </script>
+
+    <!-- Primary Title & Meta Description -->
     <title>Interior Design Studio for Homes & Commercial Spaces | Maison & Bureau</title>
     <meta
       name="description"
@@ -66,16 +70,19 @@
       content="Maison & Bureau creates thoughtful interiors for homes, offices and commercial spaces, combining purposeful planning, refined aesthetics and considered design."
     />
     <meta property="og:url" content="https://maisonetbureau.com/" />
+    <meta property="og:image" content="/src/assets/images/hero_editorial_interior_1790851495225.jpg" />
+    <meta property="og:image:alt" content="Maison & Bureau refined residential interior architecture" />
 
-    <!-- Twitter Social Cards -->
+    <!-- Twitter / X Social Cards -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Interior Design Studio for Homes & Commercial Spaces | Maison & Bureau" />
     <meta
       name="twitter:description"
       content="Maison & Bureau creates thoughtful interiors for homes, offices and commercial spaces, combining purposeful planning, refined aesthetics and considered design."
     />
+    <meta name="twitter:image" content="/src/assets/images/hero_editorial_interior_1790851495225.jpg" />
 
-    <!-- Google Fonts: Cormorant Garamond (Editorial Serif) & Plus Jakarta Sans (Clean Modern Sans) -->
+    <!-- Typography: Cormorant Garamond (Editorial Serif) & Plus Jakarta Sans (Clean Modern Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -83,7 +90,7 @@
       rel="stylesheet"
     />
 
-    <!-- Schema.org JSON-LD Structured Data for Organization, WebSite, LocalBusiness, FAQPage -->
+    <!-- Schema.org JSON-LD Structured Data: Organization, WebSite, LocalBusiness, FAQPage, BreadcrumbList -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -95,6 +102,7 @@
           "url": "https://maisonetbureau.com/",
           "logo": "https://maisonetbureau.com/logo.png",
           "description": "Maison & Bureau creates thoughtful interiors for homes, offices and commercial spaces, combining purposeful planning, refined aesthetics and considered design.",
+          "slogan": "Thoughtful design. Refined spaces. Purposeful living.",
           "knowsAbout": [
             "Interior Design",
             "Residential Interior Design",
@@ -121,6 +129,42 @@
             "@id": "https://maisonetbureau.com/#organization"
           },
           "inLanguage": "en-US"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://maisonetbureau.com/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://maisonetbureau.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "About",
+              "item": "https://maisonetbureau.com/#about"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Services",
+              "item": "https://maisonetbureau.com/#services"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Projects",
+              "item": "https://maisonetbureau.com/#projects"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Contact",
+              "item": "https://maisonetbureau.com/#contact"
+            }
+          ]
         },
         {
           "@type": "InteriorDesignStudio",
@@ -201,4 +245,3 @@
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
